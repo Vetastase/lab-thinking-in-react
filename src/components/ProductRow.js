@@ -1,43 +1,50 @@
 // child of product table
 import { useState } from 'react';
 
+
 function ProductRow (props) {
     
-    // console.log('productrow', props)
-    return(
-        <div>
-    <table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-        </tr>
+
+  return(
+
+      <div>
+        <table className='table'>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
         </thead>
-        {props.products.map((product) => {
+            {props.products.map((product) => {
 
-            if(product.inStock){
-                return(
+                if(product.inStock){
+                  return(
                     <tbody key={product.id}>
-                <tr className="InStock">
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                </tr>
-                </tbody>
-                )
-            }else{
-                return(
+                        <tr className='inStock'>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                        </tr>
+                    </tbody>
+
+                        )
+                }else{
+                    return(
                     <tbody key={product.id}>
-                <tr className="notInStock">
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                </tr>
-                </tbody>
-                )
-            }
-        })}
-    </table>
-        </div>
-    )
+                        <tr className='notInStock'>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                        </tr>
+                    </tbody>
+
+                        )
+                }
+
+
+
+            })}
+
+        </table>
+      </div>    
+  )
 }
-
 export default ProductRow

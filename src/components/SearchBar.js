@@ -1,13 +1,16 @@
 import { useState } from 'react';
 
-function SearchBar(props){
-    console.log("SearchBar", props)
+function SearchBar (props) {
+    // console.log("SearchBar", props)
+    
     return(
         <div>
         <label>Search</label>
-            <input onChange={props.checkproducttyped} placeholder="Search..."></input>
-            <input onChange={props.inStockProduct} type="checkbox"></input><label>Only show products in Stock</label>
-            
+        <br></br>
+        <input type="text" onChange={props.checkProductsType} placeholder="search..."></input>
+        <br></br>
+        <input type="checkbox" onChange={props.inStockProduct}></input>
+        <label>Only products in stock</label>
         </div>
     )
 }
